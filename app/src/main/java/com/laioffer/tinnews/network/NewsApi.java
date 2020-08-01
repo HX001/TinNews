@@ -10,6 +10,8 @@ public interface NewsApi {
     @GET("top-headlines")
     Call<NewsResponse> getTopHeadlines(@Query("country") String country);
 
+
+    // specify the page number!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     @GET("everything")
     Call<NewsResponse> getEverything(
             @Query("q") String query, @Query("pageSize") int pageSize);

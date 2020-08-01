@@ -46,6 +46,7 @@ public class SearchFragment extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(requireContext(), 2);
         binding.newsResultsRecyclerView.setLayoutManager(gridLayoutManager);
 
+
         binding.newsResultsRecyclerView.setAdapter(newsAdapter);
 
         binding.newsSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
