@@ -54,7 +54,7 @@ public class HomeFragment extends Fragment implements CardStackListener {
         layoutManager = new CardStackLayoutManager(requireContext(), this);
 
         layoutManager.setStackFrom(StackFrom.Top);
-        
+
         binding.homeCardStackView.setLayoutManager(layoutManager);
         binding.homeCardStackView.setAdapter(swipeAdapter);
 
@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment implements CardStackListener {
         NewsRepository repository = new NewsRepository(getContext());
         viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository))
                 .get(HomeViewModel.class);
-        viewModel.setCountryInput("us");
+        viewModel.setCountryInput("ca");
         viewModel.getTopHeadlines().observe(getViewLifecycleOwner(), newsResponse -> {
             if (newsResponse != null) {
                 Log.d("HomeFragement -> ", newsResponse.articles.toString());
