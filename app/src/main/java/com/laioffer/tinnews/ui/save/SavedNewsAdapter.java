@@ -47,6 +47,7 @@ public class SavedNewsAdapter extends RecyclerView.Adapter<SavedNewsAdapter.Save
         holder.descriptionTextView.setText(article.description);
         holder.itemView.setOnClickListener(v -> itemCallback.onOpenDetails(article));
         holder.favoriteIcon.setOnClickListener(v -> itemCallback.onRemoveFavorite(article));
+        holder.itemView.setOnClickListener(v -> itemCallback.onOpenDetails(article));
     }
 
     @Override

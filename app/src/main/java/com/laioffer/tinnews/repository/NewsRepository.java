@@ -2,6 +2,7 @@ package com.laioffer.tinnews.repository;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -15,6 +16,7 @@ import com.laioffer.tinnews.network.NewsApi;
 import com.laioffer.tinnews.network.RetrofitClient;
 
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +34,11 @@ public class NewsRepository {
 
     public LiveData<NewsResponse> getTopHeadlines(String country) {
         MutableLiveData<NewsResponse> topHeadlinesLiveData = new MutableLiveData<>();
-        newsApi.getTopHeadlines(country).enqueue(new Callback<NewsResponse>() {
+
+        String language = Locale.getDefault().getDisplayLanguage();
+        Log.d("language -> ", language);
+        //API request, 读出system的language
+        newsApi.getTopHeadlines(country, language).enqueue(new Callback<NewsResponse>() {
             @Override
             public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
                 if (response.isSuccessful()) {

@@ -54,7 +54,6 @@ public class HomeFragment extends Fragment implements CardStackListener {
         layoutManager = new CardStackLayoutManager(requireContext(), this);
 
         layoutManager.setStackFrom(StackFrom.Top);
-
         binding.homeCardStackView.setLayoutManager(layoutManager);
         binding.homeCardStackView.setAdapter(swipeAdapter);
 

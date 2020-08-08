@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.DetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/details_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Shocking news!" />
+
+        <TextView
+            android:id="@+id/details_author_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/author_top_margin"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/details_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@tools:sample/date/mmddyy" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/details_webLink_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:linksClickable="true"
+                android:onClick="goToURL"
+                android:text="Original Website" />
+
+            <Button
+                android:id="@+id/details_shared_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:linksClickable="true"
+                android:onClick="goToShare"
+                android:text="Share " />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/details_description_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            tools:text="This is the description" />
+
+        <ImageView
+            android:id="@+id/details_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/new_details_image_size"
+            android:layout_marginTop="@dimen/margin_default"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+
+        <TextView
+            android:id="@+id/details_content_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            tools:text="@tools:sample/lorem/random" />
+
+
+    </LinearLayout>
+
+</ScrollView>
